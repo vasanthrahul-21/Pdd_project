@@ -1,0 +1,543 @@
+/* Global container with ambulance-themed background */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f0f2f5;
+  font-family: 'Roboto', sans-serif;
+  background-image: url('https://img.freepik.com/premium-vector/ambulance-auto-paramedic-emergency-emergency-doctor-vector-illustration_123447-5008.jpg?w=996');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(230, 231, 234, 0.85);
+  z-index: -1;
+}
+
+.ambulance-signup-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0;
+  position: relative;
+  background-color: rgba(246, 121, 121, 0.95);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  border-top: 5px solid #dc3545;
+}
+
+/* Header with ambulance background */
+.ambulance-signup-header {
+  background-image: url('https://img.freepik.com/free-vector/ambulance-concept_23-2147940302.jpg?ga=GA1.1.1525244658.1740474617&semt=ais_hybrid');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 70px 40px;
+  text-align: center;
+  margin-bottom: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Semi-transparent overlay for better text readability */
+.ambulance-signup-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(220, 53, 69, 0.8) 0%, rgba(33, 37, 41, 0.9) 100%);
+  z-index: 1;
+}
+
+.ambulance-signup-header h1,
+.ambulance-signup-header p {
+  position: relative;
+  z-index: 2;
+}
+
+.ambulance-signup-header h1 {
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.ambulance-signup-header p {
+  font-size: 1.3rem;
+  max-width: 700px;
+  margin: 0 auto;
+  color: #e6e6e6;
+  line-height: 1.6;
+}
+
+/* Emergency services style ribbon */
+.ambulance-signup-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 15px;
+  background: repeating-linear-gradient(
+    45deg,
+    #dc3545,
+    #dc3545 20px,
+    #ffffff 20px,
+    #ffffff 40px
+  );
+  z-index: 3;
+}
+
+/* Form styling */
+.ambulance-signup-form {
+  background-color: white;
+  padding: 40px;
+  position: relative;
+}
+
+.form-section {
+  margin-bottom: 40px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #e9ecef;
+  position: relative;
+}
+
+.form-section h2 {
+  color: #dc3545;
+  font-size: 1.6rem;
+  margin-bottom: 25px;
+  padding: 0 0 15px 45px;
+  border-bottom: 2px solid #f8d7da;
+  position: relative;
+}
+
+.form-section h2::before {
+  content: '🚑';
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.8rem;
+}
+
+.form-group {
+  margin-bottom: 25px;
+  position: relative;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #343a40;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="date"],
+input[type="number"],
+select,
+textarea {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: all 0.3s;
+  background-color: #f8f9fa;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #dc3545;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.25);
+  background-color: #fff;
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+select {
+  appearance: none;
+  background-image: url("https://img.freepik.com/free-vector/emergency-ambulance-concept_23-2148543899.jpg?ga=GA1.1.1525244658.1740474617&semt=ais_hybrid");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+  padding-right: 40px;
+}
+
+.name-inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.checkbox-group {
+  margin-bottom: 15px;
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.checkbox-group:hover {
+  background-color: #f0f0f0;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.checkbox-label input[type="checkbox"] {
+  margin-right: 12px;
+  accent-color: #dc3545;
+  width: 20px;
+  height: 20px;
+}
+
+.document-uploads {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.upload-group {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  border: 2px dashed #dc3545;
+  transition: all 0.3s;
+}
+
+.upload-group:hover {
+  background-color: #f1f3f5;
+  border-color: #c82333;
+}
+
+input[type="file"] {
+  border: none;
+  padding: 10px 0;
+  background-color: transparent;
+}
+
+input[type="file"]::file-selector-button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 15px;
+  transition: background-color 0.3s;
+  font-weight: 500;
+}
+
+input[type="file"]::file-selector-button:hover {
+  background-color: #c82333;
+}
+
+/* Form Actions */
+.form-actions {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #e9ecef;
+}
+
+.preview-button,
+.edit-button,
+.submit-button {
+  padding: 15px 40px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.preview-button {
+  background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(220, 53, 69, 0.4);
+}
+
+.preview-button:hover {
+  background: linear-gradient(135deg, #c82333 0%, #bd2130 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(220, 53, 69, 0.5);
+}
+
+/* Preview styling */
+.preview-container {
+  background-color: white;
+  padding: 40px;
+}
+
+.preview-container h2 {
+  text-align: center;
+  color: #dc3545;
+  margin-bottom: 40px;
+  font-size: 2rem;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.preview-container h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background-color: #dc3545;
+}
+
+.preview-section {
+  margin-bottom: 35px;
+  padding: 25px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  border-left: 5px solid #dc3545;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.preview-section h3 {
+  color: #343a40;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #dee2e6;
+  font-size: 1.3rem;
+}
+
+.preview-section p {
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+.preview-section p strong {
+  color: #495057;
+  display: inline-block;
+  width: 180px;
+}
+
+.preview-actions {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.edit-button {
+  background: linear-gradient(135deg, #6c757d 0%, #5a6268 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(108, 117, 125, 0.4);
+}
+
+.edit-button:hover {
+  background: linear-gradient(135deg, #5a6268 0%, #495057 100%);
+  transform: translateY(-2px);
+}
+
+.submit-button {
+  background: linear-gradient(135deg, #28a745 0%, #218838 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4);
+}
+
+.submit-button:hover {
+  background: linear-gradient(135deg, #218838 0%, #1e7e34 100%);
+  transform: translateY(-2px);
+}
+
+/* Confirmation styling */
+.submission-confirmation {
+  text-align: center;
+  padding: 80px 20px;
+  background-color: white;
+}
+
+.submission-confirmation h2 {
+  color: #28a745;
+  margin-bottom: 25px;
+  font-size: 2.2rem;
+}
+
+.submission-confirmation h2::before {
+  content: '✓';
+  display: block;
+  font-size: 4rem;
+  color: #28a745;
+  margin-bottom: 20px;
+}
+
+.submission-confirmation p {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #343a40;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Responsive design */
+@media (max-width: 991px) {
+  .ambulance-signup-container {
+    margin: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .name-inputs,
+  .document-uploads {
+    grid-template-columns: 1fr;
+  }
+  
+  .ambulance-signup-header {
+    padding: 50px 20px;
+  }
+  
+  .ambulance-signup-header h1 {
+    font-size: 2rem;
+  }
+  
+  .preview-actions {
+    flex-direction: column;
+  }
+  
+  .preview-button,
+  .edit-button,
+  .submit-button {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  .ambulance-signup-form {
+    padding: 25px;
+  }
+  
+  .form-section h2 {
+    font-size: 1.4rem;
+    padding-left: 40px;
+  }
+}
+
+/* Ambulance theme elements */
+.form-section:nth-child(1) h2::before {
+  content: '🚑';
+}
+
+.form-section:nth-child(2) h2::before {
+  content: '🧑‍⚕️';
+}
+
+.form-section:nth-child(3) h2::before {
+  content: '⚕️';
+}
+
+.form-section:nth-child(4) h2::before {
+  content: '📄';
+}
+
+.form-section:nth-child(5) h2::before {
+  content: '🔒';
+}
+
+.form-section:nth-child(6) h2::before {
+  content: '📋';
+}
+
+/* Emergency breathing animation for the submit button */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 4px 15px rgba(220, 53, 69, 0.4);
+  }
+  50% {
+    box-shadow: 0 4px 25px rgba(220, 53, 69, 0.7);
+  }
+  100% {
+    box-shadow: 0 4px 15px rgba(220, 53, 69, 0.4);
+  }
+}
+
+.preview-button {
+  animation: pulse 2s infinite;
+}
+
+/* Ambulance platform branding element */
+.ambulance-platform-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 10px 15px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.ambulance-platform-badge::before {
+  content: '🚑';
+  font-size: 1.5rem;
+  margin-right: 10px;
+}
+
+.ambulance-platform-badge span {
+  font-weight: 700;
+  color: #dc3545;
+}
+.ambulance-signup-container {
+  position: relative;
+  width: 100%;
+}
+
+.login-button-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px; /* Adjust as needed */
+}
+
+.login-button {
+  background-color: #007bff; /* Blue color */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.login-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
